@@ -4,7 +4,7 @@ name: Deploy Dumi Site
 on:
   push:
     branches:
-      - main # 或 master，根据你的主分支名称修改
+      - master # 或 main，根据你的主分支名称修改
 
 jobs:
   build-and-deploy:
