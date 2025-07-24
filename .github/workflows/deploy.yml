@@ -28,8 +28,10 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm cache clean --force
+          rm -rf node_modules
           npm install -g dumi
-          npm install --legacy-peer-deps
+          npm install --legacy-peer-deps --force
           npm ls antd
           echo "ANTD VERSION: $(npm list antd | grep antd)"
 
