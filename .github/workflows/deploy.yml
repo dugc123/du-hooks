@@ -27,7 +27,11 @@ jobs:
             \${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install -g dumi && npm ci --legacy-peer-deps
+        run: |
+          npm install -g dumi
+          npm ci --legacy-peer-deps
+          npm ls antd
+          echo "ANTD VERSION: $(npm list antd | grep antd)"
 
       - name: Build site
         run: npm run docs:build
