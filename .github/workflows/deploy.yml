@@ -30,6 +30,7 @@ jobs:
         run: |
           npm config set registry https://registry.npmmirror.com
           npm install
+          npm install antd@5.26.0
           npm install -g dumi
 
       - name: Build site
