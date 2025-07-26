@@ -30,13 +30,13 @@ jobs:
         run: |
           npm config set registry https://registry.npmmirror.com
           npm cache clean --force
-          rm -rf node_modules
-          npm install -g dumi
-          npm install antd@5.26.0 --save-exact
-          npm install --legacy-peer-deps --force
-          npm view antd version
-          npm ls antd --depth=0
-          echo "ANTD VERSION: $(npm list antd | grep antd)"
+          rm -rf node_modules package-lock.json
+          npm install -g yarn
+          yarn config set registry https://registry.npmmirror.com
+          yarn install
+          yarn add antd@5.26.0
+          yarn why antd
+          echo "ANTD VERSION: $(yarn list antd)"
           cat package.json | grep antd
 
       - name: Build site
