@@ -35,10 +35,13 @@ jobs:
           npm install -g dumi@2.4.13
 
       - name: Build site
-        run: npx dumi build
+        run: |
+          npx dumi build
+          touch docs-dist/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs-dist
+          keep_files: true
