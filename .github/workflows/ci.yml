@@ -22,7 +22,12 @@ jobs:
         run: npm install -g npm@latest
       
       - name: Install pnpm
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      
+      - name: Verify pnpm
+        run: pnpm --version
       
       - name: Install dependencies
         run: pnpm install
