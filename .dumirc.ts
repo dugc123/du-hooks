@@ -3,8 +3,8 @@ import style from './docs/siteIndexStyle';
 
 export default defineConfig({
   outputPath: 'docs-dist',
-  base: '/du-hooks/',
-  publicPath: '/du-hooks/',
+  base: '/docs-dist/',
+  publicPath: '/docs-dist/',
   themeConfig: {
     name: 'du-hooks',
     carrier: 'dumi', // 设备状态栏左侧的文本内容

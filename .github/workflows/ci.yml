@@ -25,9 +25,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: latest
+          run_install: false
       
       - name: Verify pnpm
-        run: pnpm --version
+        run: |
+          echo "PATH: $PATH"
+          which pnpm
+          pnpm --version
       
       - name: Install dependencies
         run: pnpm install
