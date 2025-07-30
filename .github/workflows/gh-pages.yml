@@ -1,27 +1,27 @@
-name: github pages
-
+name: Deploy Docs to gh-pages
 
 on:
   push:
     branches:
-      - master # default branch
-
+      - master
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - uses: pnpm/action-setup@v2
         with:
           version: 8
+          
       - run: pnpm install
       - run: pnpm add -g dumi
       - run: npx dumi build
-      - run: touch ./docs-dist/.nojekyll
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs-dist
-          jekyll: false
+          branch: gh-pages
+          folder: docs-dist
+          clean: true
