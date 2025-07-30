@@ -1,4 +1,4 @@
-name: Deploy Docs to gh-pages
+name: Build and Deploy Docs
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,10 +18,3 @@ jobs:
       - run: pnpm install
       - run: pnpm add -g dumi
       - run: npx dumi build
-      
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: docs-dist
-          clean: true
