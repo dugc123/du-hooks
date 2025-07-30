@@ -18,3 +18,10 @@ jobs:
       - run: pnpm install
       - run: pnpm add -g dumi
       - run: npx dumi build
+      
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs-dist
+          clean: true
