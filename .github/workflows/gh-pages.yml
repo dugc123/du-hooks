@@ -12,7 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm install --production=false
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm install
+      - run: pnpm add -g dumi
       - run: npx dumi build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
