@@ -17,6 +17,7 @@ jobs:
           
       - run: pnpm install
       - run: pnpm run docs:build
+      - run: touch docs-dist/.nojekyll
       
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
