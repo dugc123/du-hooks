@@ -16,8 +16,7 @@ jobs:
           version: 8
           
       - run: pnpm install
-      - run: pnpm add -g dumi
-      - run: npx dumi build
+      - run: pnpm run docs:build
       
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
