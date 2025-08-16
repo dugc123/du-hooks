@@ -11,7 +11,7 @@ nav:
 
 ### 基础用法
 
-<code src="du-hooks/useMount/demo/index.tsx"></code>
+<code src="../../src/useMount/demo/index.tsx"></code>
 
 ## API
 

@@ -2,15 +2,15 @@ import { defineConfig } from 'dumi';
 import style from './docs/siteIndexStyle';
 
 export default defineConfig({
-  outputPath: 'docs',
-  base: '/',
-  publicPath: '/',
+  outputPath: 'docs-dist',
+  base: '/du-hooks/',
+  publicPath: '/du-hooks/',
   themeConfig: {
     name: 'du-hooks',
     carrier: 'dumi', // 设备状态栏左侧的文本内容
     footer: false,
     resolve: {
-      includes: ['docs', 'hooks'],
+      includes: ['docs', 'src'],
     },
     nav: [
       {

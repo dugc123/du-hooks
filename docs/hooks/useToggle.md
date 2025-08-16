@@ -11,11 +11,11 @@ nav:
 
 ### 基础用法
 
-<code src="du-hooks/useToggle/demo/demo1.tsx"></code>
+<code src="../../src/useToggle/demo/demo1.tsx"></code>
 
 ### 高级用法
 
-<code src="du-hooks/useToggle/demo/demo2.tsx"></code>
+<code src="../../src/useToggle/demo/demo2.tsx"></code>
 
 ## API
 
